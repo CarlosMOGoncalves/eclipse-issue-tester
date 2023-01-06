@@ -4,6 +4,9 @@ import java.security.SecureRandom;
 
 public class NumericUtils {
 
+    private static int numberThree = 3;
+    private static int numberFour = 4;
+
     /**
      * Generates a random number between two values. The lower limit value is inclusive and
      * the upper limit is exclusive.
@@ -27,7 +30,7 @@ public class NumericUtils {
     }
 
     public static int generateNumberThree() {
-        return 3;
+        return numberThree;
     }
 
 }
