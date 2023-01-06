@@ -4,8 +4,16 @@ import java.security.SecureRandom;
 
 public class NumericUtils {
 
+    public enum Type {
+        REAL,
+        IMAGINARY;
+
+    }
+
     private static int numberThree = 3;
     private static int numberFour = 4;
+
+    private Type numberType = Type.IMAGINARY;
 
     /**
      * Generates a random number between two values. The lower limit value is inclusive and
@@ -31,6 +39,10 @@ public class NumericUtils {
 
     public static int generateNumberThree() {
         return numberThree;
+    }
+
+    public Type getType() {
+        return numberType;
     }
 
 }
