@@ -36,6 +36,8 @@
         <!-- Payara version -->
         <payara-version>5.2022.3</payara-version>
         
+        <aws-javasdkv2-version>2.19.13</aws-javasdkv2-version>
+        
         <!-- Maven plugin versions -->
         <war-plugin-version>3.3.2</war-plugin-version>
         <clean-plugin-version>3.2.0</clean-plugin-version>
@@ -105,6 +107,16 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            
+            <!-- AWS SDK is heavily used due to Infra, this BOM resolves all its multiple dependencies -->
+            <dependency>
+                <groupId>software.amazon.awssdk</groupId>
+                <artifactId>bom</artifactId>
+                <type>pom</type>
+                <version>${aws-javasdkv2-version}</version>
+                <scope>import</scope>
+            </dependency>
+            
 		</dependencies>
     </dependencyManagement>
     
@@ -130,6 +142,12 @@
             <scope>provided</scope>
         </dependency>
 
+
+        <dependency>
+            <groupId>software.amazon.awssdk</groupId>
+            <artifactId>s3</artifactId>
+        </dependency>
+        
     </dependencies>
 
     <build>
